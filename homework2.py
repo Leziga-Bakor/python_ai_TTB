@@ -13,11 +13,11 @@ cam.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
 while True:
     ignore,  frame = cam.read()
     frame = cv2.resize(frame, (int(width/columns), int(height/columns)))
-    for i in range(rows):
-        for j in range(columns):
+    for i in range(0,rows):
+        for j in range(0,columns):
             windowName = 'Window'+str(i)+' * '+str(j)
             cv2.imshow(windowName, frame)
-            cv2.moveWindow(windowName,int(width/columns)*j, int(height/columns)*i)
+            cv2.moveWindow(windowName,int(width/columns)*j, int(height/columns+30)*i)
     
     if cv2.waitKey(1) & 0xff ==ord('q'):
         break
