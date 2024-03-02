@@ -12,8 +12,13 @@ cam.set(cv2.CAP_PROP_FPS, 30)
 cam.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
 while True:
     ignore,  frame = cam.read()
-    cv2.imshow('my WEBcam', frame)
-    cv2.moveWindow('my WEBcam',0,0)
+    frame = cv2.resize(frame, int(width/columns), int(height/columns))
+    for i in range(rows):
+        for j in range(columns):
+            windowName = 'Window'+str(i)+' * '+str(j)
+            cv2.imshow(windowName, frame)
+            cv2.moveWindow(windowName,int(width/columns)*j, int(height/columns))
+    
     if cv2.waitKey(1) & 0xff ==ord('q'):
         break
 cam.release()
