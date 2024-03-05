@@ -4,7 +4,7 @@ import numpy as np
 
 boardSize = int(input('What size is your board? '))
 numSquares=int(input('How many squares? '))
-squareSize = boardSize/numSquares
+squareSize = int(boardSize/numSquares)
 while True:
 
     frame = np.zeros([boardSize,boardSize,3],dtype=np.uint8)
