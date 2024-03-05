@@ -1,6 +1,10 @@
 import cv2
 print(cv2.__version__)
 import numpy as np
+
+boardSize = int(input('What size is your board? '))
+numSquares=int(input('How many squares? '))
+squareSize = boardSize/numSquares
 while True:
 
     frame = np.zeros([250,250,3],dtype=np.uint8)
