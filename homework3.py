@@ -25,6 +25,7 @@ while True:
         break
 '''
 
+#Top tech boy solution
 while True:
     frame =np.zeros([boardSize,boardSize,3],dtype=np.uint8)
 
@@ -39,7 +40,7 @@ while True:
             nowColor = lightColor
         else:
             nowColor=darkColor
-            
+
     cv2.imshow('my window',frame)
     if cv2.waitKey(1) & 0xff == ord('q'):
         break
