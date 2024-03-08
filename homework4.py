@@ -19,12 +19,14 @@ cam.set(cv2.CAP_PROP_FRAME_HEIGHT,height)
 cam.set(cv2.CAP_PROP_FPS, 30)
 cam.set(cv2.CAP_PROP_FOURCC,cv2.VideoWriter_fourcc(*'MJPG'))
 
+fpsFILT = 30
 tLast = time.time()
 time.sleep(.1)
 while True:
     dt = time.time() - tLast
     fps = 1/dt
     print(fps)
+    fpsFILT = fpsFILT*0.9 + fps*0.1
     tLast = time.time()
     ignore,  frame = cam.read()
     frame[140:220,250:390]=(255,0,0)
@@ -32,7 +34,7 @@ while True:
     cv2.circle(frame,(int(width/2),int(height/2)),myRadius,myColor,myThick)
     cv2.putText(frame,myText,(120,60),myFont,fontH,(0,0,255),fontT)
     cv2.rectangle(frame,(0,0),(120,40),(255,0,255),-1)
-    cv2.putText(frame,str(int(fps))+' fps', (5,30), myFont,1,(0,255,255), 2 )    
+    cv2.putText(frame,str(int(fpsFILT))+' fps', (5,30), myFont,1,(0,255,255), 2 )    
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
     if cv2.waitKey(1) & 0xff ==ord('q'):
