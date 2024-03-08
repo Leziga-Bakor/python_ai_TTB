@@ -31,7 +31,7 @@ while True:
     cv2.rectangle(frame,upperLeft,lowerRight,(0,255,0),lineW)
     cv2.circle(frame,(int(width/2),int(height/2)),myRadius,myColor,myThick)
     cv2.putText(frame,myText,(120,60),myFont,fontH,(0,0,255),fontT)
-    # cv2.rectangle(frame,(0,0),(120,40),(255,0,255),-1)
+    cv2.rectangle(frame,(0,0),(120,40),(255,0,255),-1)
     cv2.putText(frame,str(int(fps))+' fps', (5,30), myFont,1,(0,255,255), 2 )    
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
