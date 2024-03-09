@@ -11,6 +11,10 @@ while True:
     ignore,  frame = cam.read()
     frameROI=frame[150:210,250:390]
     frameROIGray = cv2.cvtColor(frameROI,cv2.COLOR_BGR2GRAY)
+    frameROIBGR = cv2.cvtColor(frameROIGray, cv2.COLOR_GRAY2BGR)
+    frame[150:210,250:390] = frameROIBGR
+    cv2.imshow('my BGR gray', frameROIBGR)
+    cv2.moveWindow('my BGR gray', 650,180)
     cv2.imshow('my ROIgray', frameROIGray)
     cv2.moveWindow('my ROIgray', 650,90)
     cv2.imshow('my ROI', frameROI)
