@@ -20,6 +20,10 @@ while True:
     ignore,  frame = cam.read()
     
     frameROI = frame[int(boxCR-snipH/2):int(boxCR+snipH/2),int(boxCC-snipW/2):int(boxCC+snipW/2)]
+    frame=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    frame=cv2.cvtColor(frame,cv2.COLOR_GRAY2BGR)
+    frame[int(boxCR-snipH/2):int(boxCR+snipH/2),int(boxCC-snipW/2):int(boxCC+snipW/2)]=frameROI
+    
     cv2.imshow('my ROI',frameROI)
     cv2.moveWindow('my ROI', width,0)
     cv2.imshow('my WEBcam', frame)
