@@ -24,6 +24,14 @@ while True:
     frame=cv2.cvtColor(frame,cv2.COLOR_GRAY2BGR)
     frame[int(boxCR-snipH/2):int(boxCR+snipH/2),int(boxCC-snipW/2):int(boxCC+snipW/2)]=frameROI
     
+    if boxCR-snipH/2 <= 0 or boxCR+snipH/2 >= height:
+        deltaRow *= -1
+    if boxCC-snipW/2 <= 0 or boxCC+snipW/2 >= width:
+        deltaColumn *= -1
+
+    boxCR += deltaRow
+    boxCC += deltaColumn
+
     cv2.imshow('my ROI',frameROI)
     cv2.moveWindow('my ROI', width,0)
     cv2.imshow('my WEBcam', frame)
