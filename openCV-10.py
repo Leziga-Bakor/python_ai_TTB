@@ -14,6 +14,10 @@ def mouseClick(event, xPos,yPos,flags,params):
         print('at Position',xPos,yPos)
         evt=event
         pnt =(xPos, yPos)
+    if event==cv2.EVENT_RBUTTONUP:
+        print('Right button up ', event)
+        evt = event
+        pnt=(xPos,yPos)
 width=1280
 height=720
 cam=cv2.VideoCapture(0,cv2.CAP_DSHOW)
