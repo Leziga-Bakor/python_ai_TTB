@@ -25,7 +25,7 @@ cv2.namedWindow('my WEBcam')
 cv2.setMouseCallback('my WEBcam', mouseClick)
 while True:
     ignore,  frame = cam.read()
-    if evt==1:
+    if evt==1 or evt == 4:
         cv2.circle(frame, pnt, 25, (255,0,0),2)
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
