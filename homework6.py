@@ -35,7 +35,10 @@ while True:
         cv2.rectangle(frame,pnt1,pnt2, (0,0,255),2)
         frameROI = frame[pnt1[1]:pnt2[1],pnt1[0]:pnt2[0]]
         cv2.imshow('my ROI', frameROI)
-        cv2.moveWindow('my ROI', 1280,0)        
+        cv2.moveWindow('my ROI', 1280,0)  
+    if evt == 5:
+        cv2.destroyWindow('my ROI')
+        evt = 0      
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
     if cv2.waitKey(1) & 0xff ==ord('q'):
