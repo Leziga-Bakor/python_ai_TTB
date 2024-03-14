@@ -4,17 +4,17 @@ evt = 0
 evt2 = 0
 
 def mouseClick(event, xPos,yPos,flags,params):
-    global evt, evt1, evt2
+    global evt
     global pnt, pnt1, pnt2
     if event==cv2.EVENT_LBUTTONDOWN:
         print('Mouse Event was: ',event)
         print('at Position', xPos, yPos)
         pnt1 =(xPos, yPos)
-        evt1 = event
+        evt = event
     if event==cv2.EVENT_LBUTTONUP:
         print('Mouse Event was: ', event)
         print('at Position',xPos,yPos)
-        evt2=event
+        evt=event
         pnt2 =(xPos, yPos)
     if event==cv2.EVENT_RBUTTONDOWN:
         print('Right button up ', event)
@@ -31,7 +31,8 @@ cv2.namedWindow('my WEBcam')
 cv2.setMouseCallback('my WEBcam', mouseClick)
 while True:
     ignore,  frame = cam.read()
-    if  evt2 == 4 and pnt1 != pnt2:    
+    if  evt == 4 and pnt1 != pnt2:    
+        cv2.rectangle(frame,pnt1,pnt2, (0,0,255),2)
         frameROI = frame[pnt1[1]:pnt2[1],pnt1[0]:pnt2[0]]
         cv2.imshow('my ROI', frameROI)
         cv2.moveWindow('my ROI', 1280,0)        
