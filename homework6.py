@@ -38,7 +38,7 @@ while True:
         pnt1 = pnt1a
         pnt2 = pnt2a
      
-    frameROI = frame[pnt1[0]:pnt2[0],pnt1[1]:pnt2[1]]
+    frameROI = frame[pnt1[1]:pnt2[1],pnt1[0]:pnt2[0]]
 
     cv2.imshow('my ROI', frameROI)
     cv2.moveWindow('my ROI', 1280,0)        
