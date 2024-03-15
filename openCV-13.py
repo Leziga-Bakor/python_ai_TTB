@@ -12,11 +12,16 @@ def myCallBack3(val):
     global myRad
     print('Radius: ', val)
     myRad = val
+def myCallBack4(val):
+    global myThick
+    print('thickness: ', val)
+    myThick = val
 width=1280
 height=720
 xPos = int(width/2)
 yPos = int(height/2)
 myRad = 25
+myThick = 1
 cam=cv2.VideoCapture(0,cv2.CAP_DSHOW)
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, width)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT,height)
@@ -27,10 +32,12 @@ cv2.resizeWindow('myTrackbars',400,150)
 cv2.moveWindow('myTrackbars', width, 0)
 cv2.createTrackbar('xPos', 'myTrackbars', xPos,1920, myCallBack1)
 cv2.createTrackbar('yPos', 'myTrackbars', yPos,1080, myCallBack2)
-cv2.createTrackbar('radius', 'myTrackbars', yPos,int(height/2), myCallBack3)
+cv2.createTrackbar('radius', 'myTrackbars', myRad ,int(height/2), myCallBack3)
+cv2.createTrackbar('thickness', 'myTrackbars', myThick ,7, myCallBack4)
+
 while True:
     ignore,  frame = cam.read()
-    cv2.circle(frame, (xPos,yPos),myRad,(255,0,0),2)
+    cv2.circle(frame, (xPos,yPos),myRad,(255,0,0),myThick)
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
     if cv2.waitKey(1) & 0xff ==ord('q'):
