@@ -37,6 +37,8 @@ cv2.createTrackbar('thickness', 'myTrackbars', myThick ,7, myCallBack4)
 
 while True:
     ignore,  frame = cam.read()
+    if myThick == 0:
+        myThick = (-1)
     cv2.circle(frame, (xPos,yPos),myRad,(255,0,0),myThick)
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
