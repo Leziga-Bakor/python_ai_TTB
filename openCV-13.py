@@ -12,7 +12,7 @@ cam.set(cv2.CAP_PROP_FOURCC,cv2.VideoWriter_fourcc(*'MJPG'))
 cv2.namedWindow('myTrackbars')
 cv2.resizeWindow('myTrackbars',100,100)
 cv2.moveWindow('myTrackbars', width, 0)
-cv2.createTrackbar('xPos', 'myTrackbars', 0,1920, mycallBack)
+cv2.createTrackbar('xPos', 'myTrackbars', 0,1920, myCallBack)
 while True:
     ignore,  frame = cam.read()
     cv2.imshow('my WEBcam', frame)
