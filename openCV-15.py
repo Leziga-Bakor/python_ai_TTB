@@ -31,8 +31,11 @@ while True:
     ignore,  frame = cam.read()
     if evt==1:
         x=np.zeros([250,250,3],dtype=np.uint8)
+        clr = frame[yVal][xVal]
+        x[:,:] = clr
         cv2.imshow('color picker',x)
         cv2.moveWindow('color picker', width,0)
+        evt=0
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
     if cv2.waitKey(1) & 0xff ==ord('q'):
