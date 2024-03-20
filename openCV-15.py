@@ -33,6 +33,7 @@ while True:
         x=np.zeros([250,250,3],dtype=np.uint8)
         clr = frame[yVal][xVal]
         x[:,:] = clr
+        cv2.putText(x,str(clr),(0,50),cv2.FONT_HERSHEY_COMPLEX,1,(0,0,0),1)
         cv2.imshow('color picker',x)
         cv2.moveWindow('color picker', width,0)
         evt=0
