@@ -25,8 +25,8 @@ cam.set(cv2.CAP_PROP_FRAME_WIDTH, width)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT,height)
 cam.set(cv2.CAP_PROP_FPS, 30)
 cam.set(cv2.CAP_PROP_FOURCC,cv2.VideoWriter_fourcc(*'MJPG'))
-cv2.namedWindow('my Webcam')
-cv2.setMouseCallback('my Webcam', mouseClick)
+cv2.namedWindow('my WEBcam')
+cv2.setMouseCallback('my WEBcam', mouseClick)
 while True:
     ignore,  frame = cam.read()
     if evt==1:
