@@ -11,7 +11,12 @@ cam.set(cv2.CAP_PROP_FOURCC,cv2.VideoWriter_fourcc(*'MJPG'))
 cv2.namedWindow('myTracker')
 cv2.moveWindow('myTracker',width,0)
 
-
+cv2.createTrackbar('Hue Low', 'myTracker', 10,179, onTrack1)
+cv2.createTrackbar('Hue High', 'myTracker', 20,179, onTrack2)
+cv2.createTrackbar('Sat Low', 'myTracker', 10,255, onTrack3)
+cv2.createTrackbar('Sat High', 'myTracker', 250,255, onTrack4)
+cv2.createTrackbar('Val Low', 'myTracker', 10,255, onTrack5)
+cv2.createTrackbar('Val High', 'myTracker', 250,255, onTrack6)
 while True:
     ignore,  frame = cam.read()
     cv2.imshow('my WEBcam', frame)
