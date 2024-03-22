@@ -7,6 +7,11 @@ cam.set(cv2.CAP_PROP_FRAME_WIDTH, width)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT,height)
 cam.set(cv2.CAP_PROP_FPS, 30)
 cam.set(cv2.CAP_PROP_FOURCC,cv2.VideoWriter_fourcc(*'MJPG'))
+
+cv2.namedWindow('myTracker')
+cv2.moveWindow('myTracker',width,0)
+
+
 while True:
     ignore,  frame = cam.read()
     cv2.imshow('my WEBcam', frame)
