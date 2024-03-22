@@ -1,5 +1,31 @@
 import cv2
 print(cv2.__version__)
+
+def onTrack1(val):
+    global huelow
+    huelow = val
+    print('Hue low', huelow)
+def onTrack1(val):
+    global huelow
+    huelow = val
+    print('Hue low', huelow)
+def onTrack1(val):
+    global huelow
+    huelow = val
+    print('Hue low', huelow)
+def onTrack1(val):
+    global huelow
+    huelow = val
+    print('Hue low', huelow)
+def onTrack1(val):
+    global huelow
+    huelow = val
+    print('Hue low', huelow)
+def onTrack1(val):
+    global huelow
+    huelow = val
+    print('Hue low', huelow)
+
 width=640
 height=360
 cam=cv2.VideoCapture(0,cv2.CAP_DSHOW)
