@@ -1,4 +1,5 @@
 import cv2
+import numpy
 print(cv2.__version__)
 
 def onTrack1(val):
@@ -52,6 +53,8 @@ cv2.createTrackbar('Val Low', 'myTracker', 10,255, onTrack5)
 cv2.createTrackbar('Val High', 'myTracker', 250,255, onTrack6)
 while True:
     ignore,  frame = cam.read()
+    frameHSV=cv2.cvtcolor(frame,cv2.COLOR_BGRHSV)
+    lowerBound=np.array([hueLow,satLow,valLow])
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
     if cv2.waitKey(1) & 0xff ==ord('q'):
