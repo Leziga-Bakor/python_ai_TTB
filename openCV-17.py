@@ -1,5 +1,5 @@
 import cv2
-import numpy
+import numpy as np
 print(cv2.__version__)
 
 def onTrack1(val):
@@ -55,6 +55,7 @@ while True:
     ignore,  frame = cam.read()
     frameHSV=cv2.cvtcolor(frame,cv2.COLOR_BGRHSV)
     lowerBound=np.array([hueLow,satLow,valLow])
+    upperBound=np.array([hueHigh, satHigh, valHigh])
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
     if cv2.waitKey(1) & 0xff ==ord('q'):
