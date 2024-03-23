@@ -37,6 +37,13 @@ cam.set(cv2.CAP_PROP_FOURCC,cv2.VideoWriter_fourcc(*'MJPG'))
 cv2.namedWindow('myTracker')
 cv2.moveWindow('myTracker',width,0)
 
+hueLow = 10
+hueHigh = 20 
+satLow = 10
+satHigh = 250
+valLow =10 
+valHigh = 250 
+
 cv2.createTrackbar('Hue Low', 'myTracker', 10,179, onTrack1)
 cv2.createTrackbar('Hue High', 'myTracker', 20,179, onTrack2)
 cv2.createTrackbar('Sat Low', 'myTracker', 10,255, onTrack3)
