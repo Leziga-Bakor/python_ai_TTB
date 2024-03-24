@@ -75,7 +75,7 @@ while True:
 
     myMaskComp = myMask | myMask2
     # myMask = cv2.bitwise_not(myMask)
-    myObject=cv2.bitwise_and(frame,frame,mask=myMask)
+    myObject=cv2.bitwise_and(frame,frame,mask=myMaskComp)
     # cv2.imshow('My Ojbect',myObject)
     myObjectSmall=cv2.resize(myObject, (int(width/2),int(height/2)))
     cv2.imshow('My Object', myObjectSmall)
