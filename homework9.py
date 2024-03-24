@@ -10,6 +10,14 @@ def onTrack2(val):
     global hueHigh
     hueHigh = val
     print('Hue High', hueHigh)
+def onTrack7(val):
+    global hueLow2
+    hueLow2 = val
+    print('Hue low2', hueLow2)
+def onTrack8(val):
+    global hueHigh22
+    hueHigh2 = val
+    print('Hue High2', hueHigh2)
 def onTrack3(val):
     global satLow
     satLow = val
@@ -47,6 +55,8 @@ valHigh = 250
 
 cv2.createTrackbar('Hue Low', 'myTracker', 10,179, onTrack1)
 cv2.createTrackbar('Hue High', 'myTracker', 20,179, onTrack2)
+cv2.createTrackbar('Hue Low2', 'myTracker', 10,179, onTrack7)
+cv2.createTrackbar('Hue High2', 'myTracker', 20,179, onTrack8)
 cv2.createTrackbar('Sat Low', 'myTracker', 10,255, onTrack3)
 cv2.createTrackbar('Sat High', 'myTracker', 250,255, onTrack4)
 cv2.createTrackbar('Val Low', 'myTracker', 10,255, onTrack5)
