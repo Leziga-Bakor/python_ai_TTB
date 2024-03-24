@@ -71,7 +71,7 @@ while True:
 
 
     myMask = cv2.inRange(frameHSV,lowerBound,upperBound)
-    myMask = cv2.inRange(frameHSV,lowerBound2,upperBound2)
+    myMask2 = cv2.inRange(frameHSV,lowerBound2,upperBound2)
     # myMask = cv2.bitwise_not(myMask)
     myObject=cv2.bitwise_and(frame,frame,mask=myMask)
     # cv2.imshow('My Ojbect',myObject)
@@ -82,6 +82,11 @@ while True:
     myMaskSmall=cv2.resize(myMask, (int(width/2),int(height/2)))
     cv2.imshow('My Mask',myMaskSmall)
     cv2.moveWindow('My Mask',0,height)
+
+    myMaskSmall2=cv2.resize(myMask2, (int(width/2),int(height/2)))
+    cv2.imshow('My Mask2',myMaskSmall2)
+    cv2.moveWindow('My Mask2',0,height+int(height/2)+30)
+
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
     if cv2.waitKey(1) & 0xff ==ord('q'):
