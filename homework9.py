@@ -59,7 +59,7 @@ while True:
     myMask = cv2.inRange(frameHSV,lowerBound,upperBound)
     myMask = cv2.bitwise_not(myMask)
     myObject=cv2.bitwise_and(frame,frame,mask=myMask)
-    cv2.imshow('My Ojbect',myObject)
+    # cv2.imshow('My Ojbect',myObject)
     myObjectSmall=cv2.resize(myObject, (int(width/2),int(height/2)))
     cv2.imshow('My Object', myObjectSmall)
     cv2.moveWindow('My Object', int(width/2),int(height) )
