@@ -72,6 +72,8 @@ while True:
 
     myMask = cv2.inRange(frameHSV,lowerBound,upperBound)
     myMask2 = cv2.inRange(frameHSV,lowerBound2,upperBound2)
+
+    myMaskComp = myMask | myMask2
     # myMask = cv2.bitwise_not(myMask)
     myObject=cv2.bitwise_and(frame,frame,mask=myMask)
     # cv2.imshow('My Ojbect',myObject)
