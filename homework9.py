@@ -35,8 +35,8 @@ def onTrack6(val):
     valHigh = val
     print('Val High', valHigh)
 
-width=640
-height=360
+width=860
+height=540
 cam=cv2.VideoCapture(0,cv2.CAP_DSHOW)
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, width)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT,height)
@@ -61,6 +61,7 @@ cv2.createTrackbar('Sat Low', 'myTracker', 10,255, onTrack3)
 cv2.createTrackbar('Sat High', 'myTracker', 250,255, onTrack4)
 cv2.createTrackbar('Val Low', 'myTracker', 10,255, onTrack5)
 cv2.createTrackbar('Val High', 'myTracker', 250,255, onTrack6)
+
 while True:
     ignore,  frame = cam.read()
     frameHSV=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
