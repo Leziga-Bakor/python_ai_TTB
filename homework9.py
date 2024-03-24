@@ -15,7 +15,7 @@ def onTrack7(val):
     hueLow2 = val
     print('Hue low2', hueLow2)
 def onTrack8(val):
-    global hueHigh22
+    global hueHigh2
     hueHigh2 = val
     print('Hue High2', hueHigh2)
 def onTrack3(val):
@@ -66,8 +66,13 @@ while True:
     frameHSV=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
     lowerBound=np.array([hueLow,satLow,valLow])
     upperBound=np.array([hueHigh, satHigh, valHigh])
+    lowerBound2=np.array([hueLow2,satLow,valLow])
+    upperBound2=np.array([hueHigh2, satHigh, valHigh])
+
+
     myMask = cv2.inRange(frameHSV,lowerBound,upperBound)
-    myMask = cv2.bitwise_not(myMask)
+    myMask = cv2.inRange(frameHSV,lowerBound2,upperBound2)
+    # myMask = cv2.bitwise_not(myMask)
     myObject=cv2.bitwise_and(frame,frame,mask=myMask)
     # cv2.imshow('My Ojbect',myObject)
     myObjectSmall=cv2.resize(myObject, (int(width/2),int(height/2)))
