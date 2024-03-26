@@ -57,6 +57,7 @@ cam.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
 cv2.namedWindow('myTracker')
 cv2.moveWindow('myTracker',width,0)
 cv2.resizeWindow('myTracker',400,500)
+
 cv2.createTrackbar('Hue Low','myTracker',15,180,onTrack1)
 cv2.createTrackbar('Hue High','myTracker',30,180,onTrack2)
 
@@ -65,9 +66,9 @@ cv2.createTrackbar('Hue High2','myTracker',60,180,onTrack8)
 
 cv2.createTrackbar('Sat Low','myTracker',10,255,onTrack3)
 cv2.createTrackbar('Sat High','myTracker',255,255,onTrack4)
+
 cv2.createTrackbar('Val Low','myTracker',10,255,onTrack5)
 cv2.createTrackbar('Val High','myTracker',255,255,onTrack6)
-
 
 while True:
     ignore,  frame = cam.read()
