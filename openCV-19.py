@@ -84,7 +84,6 @@ while True:
     myMask=myMask | myMask2
     #myMask=cv2.add(myMask,myMask2)
     #myMask=np.logical_or(myMask,myMask2)
-
     #myMask=cv2.bitwise_not(myMask)
     myMaskSmall=cv2.resize(myMask,(int(width/2),int(height/2)))
     mySelection=cv2.bitwise_and(frame,frame, mask=myMask)
