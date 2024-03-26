@@ -11,6 +11,7 @@ satLow=20
 satHigh=200
 valLow=20
 valHigh=200
+
 def onTrack1(val):
     global hueLow
     hueLow=val
@@ -35,8 +36,6 @@ def onTrack6(val):
     global valHigh
     valHigh=val
     print('High Val: ',val)
-
-
 def onTrack7(val):
     global hueLow2
     hueLow2=val
