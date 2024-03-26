@@ -49,10 +49,12 @@ def onTrack8(val):
 
 width=960
 height=540
+
 cam=cv2.VideoCapture(0)
 cam.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG')) 
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, width)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
+
 cv2.namedWindow('myTracker')
 cv2.moveWindow('myTracker',width,0)
 cv2.resizeWindow('myTracker',400,500)
