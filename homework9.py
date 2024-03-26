@@ -70,7 +70,6 @@ while True:
     lowerBound2=np.array([hueLow2,satLow,valLow])
     upperBound2=np.array([hueHigh2, satHigh, valHigh])
 
-
     myMask = cv2.inRange(frameHSV,lowerBound,upperBound)
     myMask2 = cv2.inRange(frameHSV,lowerBound2,upperBound2)
 
@@ -92,6 +91,7 @@ while True:
 
     cv2.imshow('my WEBcam', frame)
     cv2.moveWindow('my WEBcam',0,0)
+
     if cv2.waitKey(1) & 0xff ==ord('q'):
         break
 cam.release()
