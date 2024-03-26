@@ -64,7 +64,9 @@ cv2.createTrackbar('Val High', 'myTracker', 250,255, onTrack6)
 
 while True:
     ignore,  frame = cam.read()
+    
     frameHSV=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
+
     lowerBound=np.array([hueLow,satLow,valLow])
     upperBound=np.array([hueHigh, satHigh, valHigh])
     lowerBound2=np.array([hueLow2,satLow,valLow])
